@@ -1,4 +1,7 @@
-function getElementWidth (content, padding, border){
-    let totalPrice = (country+price+deliveryFee)
-    return ("Shipping to ${country} will cost ${totalPrice} credits
+function getElementWidth(content, padding, border) {
+    const contentWidth = parseFloat(content);
+    const paddingWidth = parseFloat(padding);
+    const borderWidth = parseFloat(border);
+    const totalWidth = contentWidth + paddingWidth + borderWidth;
+    return totalWidth;
 }
