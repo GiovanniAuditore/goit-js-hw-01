@@ -1,3 +1,4 @@
+'use strict'
 function getShippingCost(country) {
     let price;
 
