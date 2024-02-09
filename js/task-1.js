@@ -1,12 +1,11 @@
-
 'use strict';
 
 function slugify(title) {
     const slug = title.toLowerCase();
-    const arr = Array.from(slug.split("-"));
-    return arr
+    const arr = Array.from(slug.split(" "));
+    const result = arr.join("-"); 
+    return result;
 }
-
 
 console.log(slugify("Arrays for begginers")); // "arrays-for-begginers"
 console.log(slugify("English for developer")); // "english-for-developer"
