@@ -1,11 +1,11 @@
-// Отримуємо список всіх категорій (елементів li.item) за їх id
+
 const categoriesList = document.getElementById('categories');
 
 
 const categoryItems = categoriesList.querySelectorAll('li.item');
 
 
-console.log(`Кількість категорій: ${categoryItems.length}`);
+console.log(`Number of categories: ${categoryItems.length}`);
 
 
 categoryItems.forEach(categoryItem => {
@@ -16,6 +16,6 @@ categoryItems.forEach(categoryItem => {
   const subCategoryItems = categoryItem.querySelectorAll('li');
 
 
-  console.log(`Категорія: ${categoryTitle}`);
-  console.log(`Кількість елементів у категорії: ${subCategoryItems.length}`);
+  console.log(`Categories: ${categoryTitle}`);
+  console.log(`Number of categories: ${subCategoryItems.length}`);
 });
