@@ -14,6 +14,6 @@ changeColorButton.addEventListener('click',function (){
 
   bodyElement.style.backgroundColor = randomColor;
 
-  colorSpan.style.textContent = randomColor;
+  colorSpan.textContent = randomColor;
 
 })
