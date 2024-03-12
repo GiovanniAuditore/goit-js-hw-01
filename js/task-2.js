@@ -13,36 +13,34 @@ const images = [
   },
 ];
 
-// Отримання елементу ul.gallery з DOM
 const galleryElement = document.querySelector('.gallery');
 
-// Створення фрагмента документу для додавання всіх зображень за одну операцію
+
 const fragment = document.createDocumentFragment();
 
-// Проходження по масиву images та створення елементів для кожного зображення
+
 images.forEach(image => {
   const liElement = document.createElement('li');
   const imgElement = document.createElement('img');
 
-  // Додавання атрибутів та опису до тегу <img>
   imgElement.src = image.url;
   imgElement.alt = image.alt;
 
-  // Додавання <img> до <li>
+
   liElement.appendChild(imgElement);
 
-  // Додавання <li> до фрагмента документу
+
   fragment.appendChild(liElement);
 });
 
-// Додавання фрагмента до ul.gallery за одну операцію
+
 galleryElement.appendChild(fragment);
 
-galleryElement.appendClass('container');
 
 
-container.style.display = 'flex';
 
-container.style.flexWrap = 'wrap';
+galleryElement.style.display = 'flex';
 
-container.style.gap = "25px";
+galleryElement.style.flexWrap = 'wrap';
+
+galleryElement.style.gap = "25px";
