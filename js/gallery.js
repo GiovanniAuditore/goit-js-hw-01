@@ -80,21 +80,17 @@ function createMarkup(arr) {
 }
 
 function handleImageClick(event) {
-  console.log(event.target);
-  if (event.target === event.currentTarget){
+  if (event.target === event.currentTarget) {
     return;
   }
 
+  const currentImage = event.target.closest(".itemImage");
 
-  const currentImage = event.target.closest(".itemImage")
-  console.log(currentImage);
-  
-  const instance = basicLightBox.create(`
-    <div class ="modal">
-      <img src = "${image.original}" alt="${image.description}>
+  const instance = basicLightbox.create(`
+    <div class="modal">
+      <img src="${currentImage.querySelector("img").dataset.original}" alt="${currentImage.querySelector("img").getAttribute("alt")}">
     </div>
-    `)
+  `);
 
-
-    instance.show()
-};
+  instance.show();
+}
