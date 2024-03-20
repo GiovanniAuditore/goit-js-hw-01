@@ -78,17 +78,18 @@ function createMarkup(arr) {
     `)
     .join("");
 }
-
 function handleImageClick(event) {
   if (event.target === event.currentTarget) {
     return;
   }
 
-  const currentImage = event.target.closest(".itemImage");
+  const currentImageSrc = event.target.getAttribute("src");
+
+  const currentImage = images.find(image => image.preview === currentImageSrc);
 
   const instance = basicLightbox.create(`
     <div class="modal">
-      <img src="${currentImage.querySelector("img").dataset.original}" alt="${currentImage.querySelector("img").getAttribute("alt")}">
+      <img src="${currentImage.original}" alt="${currentImage.description}">
     </div>
   `);
 

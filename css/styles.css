@@ -19,4 +19,9 @@
     height: auto;
 
   }
+
+  .itemImage img:hover {
+    transform: scale(1.010);
+    cursor: pointer;
+  }
   
