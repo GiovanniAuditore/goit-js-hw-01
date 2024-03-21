@@ -73,7 +73,7 @@ function createMarkup(arr) {
   return arr
     .map((image) => `
       <li class = "itemImage">
-        <img src="${image.preview}" alt="${image.description}" width="300">
+        <img src="${image.preview}" alt="${image.description}" width="300"/>
       </li>
     `)
     .join("");
@@ -89,9 +89,14 @@ function handleImageClick(event) {
 
   const instance = basicLightbox.create(`
     <div class="modal">
-      <img src="${currentImage.original}" alt="${currentImage.description}">
+      <img src="${currentImage.original}" alt="${currentImage.description}" width ="800"/>
     </div>
   `);
 
   instance.show();
+
+  const modalImage = instance.element().querySelector("img");
+  modalImage.addEventListener("click", () => {
+    instance.close();
+  });
 }
